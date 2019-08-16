@@ -1,27 +1,33 @@
 <div class="container">
-  <h1><%= @cocktail.name %></h1>
-  <br>
-  <p>
-    <%= @cocktail.description %>
-  </p>
-  <br>
+  <div class="card-trip">
+    <img src="<%= @cocktail.image_url %>" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @cocktail.name %></h2>
+        <p><%= @cocktail.description %></p>
+      </div>
+      <h2 class="card-trip-pricing">free</h2>
+    </div>
+    <ul class="list-group ml-3">
+      <p><strong>Details:</strong></p>
+      <% @cocktail.doses.each do |dose| %>
+      <li class="list-group-item" >
+        <p><%= dose.ingredient.name %>: <%= dose.description %></p>
+        <%= link_to "", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
+      </li>
+      <% end %>
 
-  <ul class="list-group">
-    <p>Details:</p>
-    <% @cocktail.doses.each do |dose| %>
-    <li class="list-group-item" >
-      <p><%= dose.ingredient.name %>: <%= dose.description %></p>
-      <%= link_to "", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "fas fa-trash" %>
-    </li>
-    <% end %>
+    </ul>
 
-  </ul>
-
- <%= link_to 'Add an Ingredient', new_cocktail_dose_path(@cocktail) %>
+   <div class="ml-3">
+     <%= link_to 'Add an Ingredient', new_cocktail_dose_path(@cocktail) %>
 
 
-  <br>
-  <%= link_to 'All Cocktails', cocktails_path %>
+      <br>
+      <%= link_to 'All Cocktails', cocktails_path %>
+      </div>
+  </div>
+
 </div>
 
 

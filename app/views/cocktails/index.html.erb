@@ -1,13 +1,14 @@
-<div class="container">
 
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
-    <div class="container">
-      <h1>Discover your personal bar reciepes!</h1>
-      <p>Change your life and learn to code at one of our campuses around the world.</p>
-      <a class="btn btn-flat" href="<%= new_cocktail_path %>">Add a Cocktail</a>
-    </div>
+<div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1508253730651-e5ace80a7025?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
+  <div class="container">
+    <h1>Discover your personal bar reciepes!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="<%= new_cocktail_path %>">Add a Cocktail</a>
   </div>
+</div>
 
+<div class="container">
 
   <div class="conainer">
     <% @cocktails.each do |cocktail| %>
@@ -15,7 +16,7 @@
       <div class="card-product">
         <img src="<%= cocktail.image_url %>" />
         <div class="card-product-infos">
-          <h2><%= cocktail.name %></h2>
+          <h2><%= link_to cocktail.name, cocktail %></h2>
           <p><%= cocktail.description %></p>
         </div>
       </div>
@@ -24,4 +25,4 @@
 
 </div>
 
-<%= new_cocktail_path %>
+</div>
