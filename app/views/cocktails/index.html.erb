@@ -14,7 +14,7 @@
     <% @cocktails.each do |cocktail| %>
 
       <div class="card-product">
-        <img src="<%= cocktail.image_url %>" />
+        <img src="<%= cocktail.photo %>" />
         <div class="card-product-infos">
           <h2><%= link_to cocktail.name, cocktail %></h2>
           <p><%= cocktail.description %></p>

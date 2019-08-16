@@ -1,6 +1,7 @@
 <div class="container">
   <div class="card-trip">
-    <img src="<%= @cocktail.image_url %>" />
+    <!-- <p><%= @cocktail.image_url?.to_s %>, <%=  @cocktail.photo %></p> -->
+    <img src="<%= @cocktail.photo %>"/>
     <div class="card-trip-infos">
       <div>
         <h2><%= @cocktail.name %></h2>

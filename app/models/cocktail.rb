@@ -8,4 +8,6 @@ class Cocktail < ApplicationRecord
   validates_associated :ingredients, :doses
   validates :name, presence: true
   validates :name, uniqueness: true
+
+  mount_uploader :photo, PhotoUploader
 end
